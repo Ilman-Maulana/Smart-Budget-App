@@ -1,0 +1,2205 @@
+
+<html>
+<head>
+    <title>Cek Gambar Cepat</title>
+    <style>
+        body { font-family: sans-serif; background: #f3f4f6; padding: 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+        .card { background: white; padding: 10px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+        img { width: 100%; height: 150px; object-fit: cover; border-radius: 5px; margin-bottom: 10px; }
+        h4 { margin: 0; font-size: 14px; color: #333; }
+        p { margin: 5px 0 0 0; font-size: 11px; color: #888; word-break: break-all;}
+    </style>
+</head>
+<body>
+    <h2>Alat Cek Kualitas Gambar (Quality Control)</h2>
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/b/b1/Merdeka_Square_Monas_02.jpg" loading="lazy">
+            <h4>Monumen Nasional</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Batavia_City_Hall_%28Jakarta_History_Museum%29_Fatahillah_Square_%282025%29_-_img_02.jpg/3840px-Batavia_City_Hall_%28Jakarta_History_Museum%29_Fatahillah_Square_%282025%29_-_img_02.jpg" loading="lazy">
+            <h4>Kota Tua</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DuniaFantasi/400/250" loading="lazy">
+            <h4>Dunia Fantasi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Istana_Anak-anak_Indonesia_TMII_%282025%29_-_img_01.jpg/3840px-Istana_Anak-anak_Indonesia_TMII_%282025%29_-_img_01.jpg" loading="lazy">
+            <h4>Taman Mini Indonesia Indah (TMII)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/3/3e/Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg/langid-960px-Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg.png" loading="lazy">
+            <h4>Atlantis Water Adventure</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/3/3e/Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg/langid-960px-Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg.png" loading="lazy">
+            <h4>Taman Impian Jaya Ancol</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Ragunan_Zoo_Gate.jpg" loading="lazy">
+            <h4>Kebun Binatang Ragunan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/3/3e/Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg/langid-960px-Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg.png" loading="lazy">
+            <h4>Ocean Ecopark</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/6/60/Monumentpantaiboom.jpeg" loading="lazy">
+            <h4>Pelabuhan Marina</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Pulau_Tidung.jpg" loading="lazy">
+            <h4>Pulau Tidung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Angel_island_-_Sixth_stop_%2816932267198%29.jpg/3840px-Angel_island_-_Sixth_stop_%2816932267198%29.jpg" loading="lazy">
+            <h4>Pulau Bidadari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Pari_Island_Pier.jpg/3840px-Pari_Island_Pier.jpg" loading="lazy">
+            <h4>Pulau Pari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Dermaga_Pulau_Pramuka.jpg" loading="lazy">
+            <h4>Pulau Pramuka</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/1/17/Laskar_Pelangi_film.jpg" loading="lazy">
+            <h4>Pulau Pelangi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/3/3e/Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg/langid-960px-Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg.png" loading="lazy">
+            <h4>Pasar Seni</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/COLLECTIE_TROPENMUSEUM_Dubbele_ophaalbrug_%28Hoenderpasarbrug%29_Batavia_TMnr_10014923.jpg" loading="lazy">
+            <h4>Jembatan Kota Intan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Batavia_City_Hall_%28Jakarta_History_Museum%29_Fatahillah_Square_%282025%29_-_img_02.jpg/3840px-Batavia_City_Hall_%28Jakarta_History_Museum%29_Fatahillah_Square_%282025%29_-_img_02.jpg" loading="lazy">
+            <h4>Museum Fatahillah</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bank_Indonesia_Lama.jpg/3840px-Bank_Indonesia_Lama.jpg" loading="lazy">
+            <h4>Museum Bank Indonesia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/Kidzania/400/250" loading="lazy">
+            <h4>Kidzania</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Tombstones_taman_prasasti.jpg/3840px-Tombstones_taman_prasasti.jpg" loading="lazy">
+            <h4>Museum Taman Prasasti</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Wayang_sejarah.jpg" loading="lazy">
+            <h4>Museum Wayang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/2/25/Masjid_Istiqlal_-_Panoramio.jpg" loading="lazy">
+            <h4>Masjid Istiqlal</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Jakarta_Indonesia_Jakarta-Cathedral-10.jpg" loading="lazy">
+            <h4>Gereja Katedral</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Museum_Nasional_PNG.png" loading="lazy">
+            <h4>Museum Nasional</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/COLLECTIE_TROPENMUSEUM_Batavia_Pasar_Tanah_Abang_TMnr_10014914.jpg" loading="lazy">
+            <h4>Pasar Tanah Abang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Kantor_Kelurahan_Glodok%2C_Jakarta_Barat.jpg/3840px-Kantor_Kelurahan_Glodok%2C_Jakarta_Barat.jpg" loading="lazy">
+            <h4>Pecinan Glodok</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/SeaWorld/400/250" loading="lazy">
+            <h4>Sea World</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/WisataAgroEdukatifIstanaSusuCibugary/400/250" loading="lazy">
+            <h4>Wisata Agro Edukatif Istana Susu Cibugary</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/WisataKulinerPecenongan/400/250" loading="lazy">
+            <h4>Wisata Kuliner Pecenongan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Kniel.jpg" loading="lazy">
+            <h4>Taman Menteng</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/PIK_Centre.jpg" loading="lazy">
+            <h4>Wisata Alam Mangrove Angke</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Setu_Babakan.jpg/3840px-Setu_Babakan.jpg" loading="lazy">
+            <h4>Setu Babakan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Taman_Suropati_%281%29.jpg" loading="lazy">
+            <h4>Taman Suropati</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Halte_Transjakarta_Mayestik.jpg" loading="lazy">
+            <h4>Pasar Taman Puring</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Inside_of_Grand_Indonesia.jpg" loading="lazy">
+            <h4>Grand Indonesia Mall</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/Skyrink-MallTamanAnggrek/400/250" loading="lazy">
+            <h4>Skyrink - Mall Taman Anggrek</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BumiPerkemahanCibubur/400/250" loading="lazy">
+            <h4>Bumi Perkemahan Cibubur</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Insignia_of_the_Indonesian_National_Police.svg/langid-960px-Insignia_of_the_Indonesian_National_Police.svg.png" loading="lazy">
+            <h4>Istana Negara Republik Indonesia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Suduh_terbaik_di_Museum_Macan_Indonesia.jpg/3840px-Suduh_terbaik_di_Museum_Macan_Indonesia.jpg" loading="lazy">
+            <h4>Museum Macan (Modern and Contemporary Art in Nusantara)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/National_Gallery_of_Indonesia.JPG" loading="lazy">
+            <h4>Galeri Nasional Indonesia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Museum_Bahari_Pintu_Masuk.jpg/3840px-Museum_Bahari_Pintu_Masuk.jpg" loading="lazy">
+            <h4>Museum Bahari Jakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/MuseumSeniRupadanKramik/400/250" loading="lazy">
+            <h4>Museum Seni Rupa dan Kramik</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Kurt_Russell_by_Gage_Skidmore_2.jpg" loading="lazy">
+            <h4>The Escape Hunt</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/3/35/Monumen_Selamat_Datang_%28Maret_2025%29.jpg" loading="lazy">
+            <h4>Monumen Selamat Datang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Tanjung_Duren_Transjakarta_BRT_Station_towards_Pluit%2C_2023.jpg/3840px-Tanjung_Duren_Transjakarta_BRT_Station_towards_Pluit%2C_2023.jpg" loading="lazy">
+            <h4>Jakarta Aquarium dan Safari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Snorkeling.jpg" loading="lazy">
+            <h4>Pulau Semak Daun</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Taman_Situ_Lembang.jpg" loading="lazy">
+            <h4>Taman Situ Lembang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plaza_Taman_Ismail_Marzuki.jpg/3840px-Plaza_Taman_Ismail_Marzuki.jpg" loading="lazy">
+            <h4>Taman Ismail Marzuki</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/GaleriIndonesiaKaya/400/250" loading="lazy">
+            <h4>Galeri Indonesia Kaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Gedung_Joang_45.jpg" loading="lazy">
+            <h4>Museum Joang 45</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Planetarium_dan_Observatorium_Jakarta_%28Januari_2025%29.jpg" loading="lazy">
+            <h4>Jakarta Planetarium</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KampungCina/400/250" loading="lazy">
+            <h4>Kampung Cina</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/RumahSipitung/400/250" loading="lazy">
+            <h4>Rumah Sipitung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanAgrowisataCilangkap/400/250" loading="lazy">
+            <h4>Taman Agrowisata Cilangkap</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Klenteng_Jin_De_Yuan%2C_Glodok%2C_Jakarta.jpg" loading="lazy">
+            <h4>Klenteng Jin De Yuan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/3/3e/Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg/langid-960px-Logo_Taman_Impian_Jaya_Ancol_%282022%29.svg.png" loading="lazy">
+            <h4>Pantai Ancol</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Central_Jakarta_-_Lapangan_Banteng_%282025%29_-_img_01.jpg/3840px-Central_Jakarta_-_Lapangan_Banteng_%282025%29_-_img_01.jpg" loading="lazy">
+            <h4>Taman Lapangan Banteng</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Taman_Ayodya_Jakarta_202311_1.jpg/3840px-Taman_Ayodya_Jakarta_202311_1.jpg" loading="lazy">
+            <h4>Taman Ayodya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Historical_Indonesian_Youth_Pledge%2C_Sumpah_Pemuda_in_1928.jpg" loading="lazy">
+            <h4>Museum Sumpah Pemuda</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Musetextil.jpg" loading="lazy">
+            <h4>Museum Tekstil</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Proclamation_Monument_Jakarta.JPG" loading="lazy">
+            <h4>Tugu Proklamasi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Istana_Anak-anak_Indonesia_TMII_%282025%29_-_img_01.jpg/3840px-Istana_Anak-anak_Indonesia_TMII_%282025%29_-_img_01.jpg" loading="lazy">
+            <h4>Taman Legenda Keong Emas</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Old_Dutch_building_-_panoramio.jpg" loading="lazy">
+            <h4>Museum Kebangkitan Nasional</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/MuseumSasmitaLoka1.jpg" loading="lazy">
+            <h4>Museum Sasmita Loka Ahmad Yani</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/0/04/Basuki_abdullah.jpeg" loading="lazy">
+            <h4>Museum Basoeki Abdullah</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/US646375.png" loading="lazy">
+            <h4>Museum Layang-layang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Pelabuhan_Muara_Angke_%282022%29.jpg" loading="lazy">
+            <h4>Margasatwa Muara Angke</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/StasiunSurabayaPasarturi.jpg" loading="lazy">
+            <h4>Pasar Petak Sembilan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/2009_October_4_Judith_Krug_tribute_01.jpg" loading="lazy">
+            <h4>Freedom Library</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/LOGO-PERPUSNAS.svg/langid-1920px-LOGO-PERPUSNAS.svg.png" loading="lazy">
+            <h4>Perpustakaan Nasional</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/CibuburGardenDiary(Cibugary)/400/250" loading="lazy">
+            <h4>Cibubur Garden Diary (Cibugary)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Transjakarta_skywell_low_entry_bus.jpg" loading="lazy">
+            <h4>Waterboom PIK (Pantai Indah Kapuk)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/National_emblem_of_Indonesia_Garuda_Pancasila.svg/langid-960px-National_emblem_of_Indonesia_Garuda_Pancasila.svg.png" loading="lazy">
+            <h4>Museum Perangko</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Museum_kebun_01.jpg" loading="lazy">
+            <h4>Museum Tengah Kebun</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/SnowBayWaterpark/400/250" loading="lazy">
+            <h4>SnowBay Waterpark</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/PhalaenopsisOphrysPaphiopedilumMaxillaria.jpg" loading="lazy">
+            <h4>Taman Cattleya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/%283%29_Tebet_Eco_Park%2C_Jakarta.jpg/3840px-%283%29_Tebet_Eco_Park%2C_Jakarta.jpg" loading="lazy">
+            <h4>Taman Hutan Tebet</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Taman_kota_di_srengseng_jakarta.jpg" loading="lazy">
+            <h4>Hutan Kota Srengseng</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Starr_031210-0047_Spathodea_campanulata.jpg" loading="lazy">
+            <h4>Taman Spathodea</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Plaza_Indonesia_%282025%29.jpg" loading="lazy">
+            <h4>Plaza Indonesia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Interior_Thamrin_City%2C_2025.jpg/1920px-Interior_Thamrin_City%2C_2025.jpg" loading="lazy">
+            <h4>Mall Thamrin City</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Satriamandala_Museum_main_building.jpg/3840px-Satriamandala_Museum_main_building.jpg" loading="lazy">
+            <h4>Museum Satria Mandala</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/AliveMuseumAncol/400/250" loading="lazy">
+            <h4>Alive Museum Ancol</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KawasanKulinerBSM/400/250" loading="lazy">
+            <h4>Kawasan Kuliner BSM</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Taman_Pintar_Yogyakarta.jpg" loading="lazy">
+            <h4>Taman Pintar Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg/langid-500px-Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg.png" loading="lazy">
+            <h4>Keraton Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/SinduKusumaEdupark(SKE)/400/250" loading="lazy">
+            <h4>Sindu Kusuma Edupark (SKE)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Museum_benteng_vredeburg.png" loading="lazy">
+            <h4>Museum Benteng Vredeburg Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Armada_4A_Trans_Jogja.jpg/3840px-Armada_4A_Trans_Jogja.jpg" loading="lazy">
+            <h4>De Mata Museum Jogja</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Indonesia_-_Java_-_Yogyakarta_-_Taman_Sari.jpg/3840px-Indonesia_-_Java_-_Yogyakarta_-_Taman_Sari.jpg" loading="lazy">
+            <h4>Kampung Wisata Taman Sari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Situs_Warungboto.jpg/3840px-Situs_Warungboto.jpg" loading="lazy">
+            <h4>Situs Warungboto</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Armada_1A_Trans_Jogja_di_Jalan_Solo.jpg/3840px-Armada_1A_Trans_Jogja_di_Jalan_Solo.jpg" loading="lazy">
+            <h4>Nol Kilometer Jl.Malioboro</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Gembira_Loka_Zoo_in_Yogyakarta.jpg/3840px-Gembira_Loka_Zoo_in_Yogyakarta.jpg" loading="lazy">
+            <h4>Gembira Loka Zoo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/COLLECTIE_TROPENMUSEUM_Gebedsruimte_in_Taman_Sari_het_waterkasteel_van_de_Sultan_van_Yogyakarta_TMnr_10016553.jpg" loading="lazy">
+            <h4>Sumur Gumuling</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Yogyakarta_Indonesia_Tugu-Yogyakarta-02.jpg/3840px-Yogyakarta_Indonesia_Tugu-Yogyakarta-02.jpg" loading="lazy">
+            <h4>Desa Wisata Sungai Code Jogja Kota</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/AlunAlunSelatanYogyakarta/400/250" loading="lazy">
+            <h4>Alun Alun Selatan Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/4/4a/Monumen_Yogya_Kembali.JPG" loading="lazy">
+            <h4>Monumen Yogya Kembali</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Lampion.jpg" loading="lazy">
+            <h4>Taman Pelangi Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Wisata_belajar_bermain_musik_tradisional_Banyuwangi.jpg" loading="lazy">
+            <h4>Kampung Wisata Kadipaten</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/ArtJog_2013%2C_Taman_Budaya_Yogyakarta.JPG" loading="lazy">
+            <h4>Taman Budaya Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KampungWisataSosroMenduran/400/250" loading="lazy">
+            <h4>Kampung Wisata Sosro Menduran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/4/4a/Monumen_Yogya_Kembali.JPG" loading="lazy">
+            <h4>Monumen Batik Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Yogyakarta_Indonesia_Tugu-Yogyakarta-01.jpg" loading="lazy">
+            <h4>Tugu Pal Putih Jogja</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Lahan_parkir_dan_amfiteater_di_Tebing_Breksi_Yogyakarta.jpg/3840px-Lahan_parkir_dan_amfiteater_di_Tebing_Breksi_Yogyakarta.jpg" loading="lazy">
+            <h4>Tebing Breksi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/CandiDonotirto/400/250" loading="lazy">
+            <h4>Candi Donotirto</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Malioboro_Street%2C_Yogyakarta.JPG" loading="lazy">
+            <h4>Kawasan Malioboro</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg/langid-500px-Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg.png" loading="lazy">
+            <h4>Bangsal Pagelaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Waduk_Tambakboyo_01.jpg" loading="lazy">
+            <h4>Embung Tambakboyo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Big_Stone_at_Hutan_Pinus_Pengger_Jogja.jpg/3840px-Big_Stone_at_Hutan_Pinus_Pengger_Jogja.jpg" loading="lazy">
+            <h4>Hutan Pinus Pengger</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Munumen_Serangan_Umum_1_Maret_1949.jpg" loading="lazy">
+            <h4>Monumen Serangan Umum 1 Maret</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Puncak_Pinus_Becici.jpg" loading="lazy">
+            <h4>Puncak Pinus Becici</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg/3840px-Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg" loading="lazy">
+            <h4>Bukit Bintang Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Gedung_Agung_May_12_2025.jpg" loading="lazy">
+            <h4>Gedung Agung Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/The_Lost_World_Castle.jpg/3840px-The_Lost_World_Castle.jpg" loading="lazy">
+            <h4>The Lost World Castle</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Museum_Sandi_Kotabaru_di_Yogyakarta.jpg/1920px-Museum_Sandi_Kotabaru_di_Yogyakarta.jpg" loading="lazy">
+            <h4>Monumen Sanapati</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/JurangTembelanKanigoro/400/250" loading="lazy">
+            <h4>Jurang Tembelan Kanigoro</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Merapi_Park.jpg/3840px-Merapi_Park.jpg" loading="lazy">
+            <h4>The World Landmarks - Merapi Park Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Museum_Sonobudoyo_2025.jpg/3840px-Museum_Sonobudoyo_2025.jpg" loading="lazy">
+            <h4>Museum Sonobudoyo Unit I</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/P%C4%81hoehoe_Lava_flow.JPG/3840px-P%C4%81hoehoe_Lava_flow.JPG" loading="lazy">
+            <h4>Lava Bantal</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BukitPangukKediwung/400/250" loading="lazy">
+            <h4>Bukit Panguk Kediwung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Indonesia_Sleman_Regency_location_map.svg/langid-1280px-Indonesia_Sleman_Regency_location_map.svg.png" loading="lazy">
+            <h4>Candi Prambanan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Puncak_Pinus_Becici.jpg" loading="lazy">
+            <h4>Watu Goyang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/3/30/Kampung_Coklat_Blitar.jpg" loading="lazy">
+            <h4>Kampung Wisata Rejowinangun</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Flag_of_Pakualaman.svg/langid-960px-Flag_of_Pakualaman.svg.png" loading="lazy">
+            <h4>Kauman Pakualaman Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/COLLECTIE_TROPENMUSEUM_De_waringins_op_de_alun-alun_bij_de_ingang_van_de_kraton_van_de_sultan_van_Jogjakarta_TMnr_60022716.jpg" loading="lazy">
+            <h4>Alun-alun Utara Keraton Yogyakarta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/Pelepasan_Penyu.jpg" loading="lazy">
+            <h4>Pantai Goa Cemara</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BlueLagoonJogja/400/250" loading="lazy">
+            <h4>Blue Lagoon Jogja</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Gumuk_Pasir_Parangkusumo_2.jpg/3840px-Gumuk_Pasir_Parangkusumo_2.jpg" loading="lazy">
+            <h4>Gumuk Pasir Parangkusumo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Mount_Gede_01.jpg" loading="lazy">
+            <h4>Bukit Lintang Sewu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Boerderij_Buitenzorg_-_Studio_Alam_Gamplong_-_Bumi_Manusia.jpg" loading="lazy">
+            <h4>Studio Alam Gamplong</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/DSC04587-3.jpg/3840px-DSC04587-3.jpg" loading="lazy">
+            <h4>Watu Lumbung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Kedungpedut.jpg" loading="lazy">
+            <h4>Air Terjun Kedung Pedut</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Puncak_Pinus_Becici.jpg" loading="lazy">
+            <h4>Puncak Kebun Buah Mangunan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DesaWisataGamplong/400/250" loading="lazy">
+            <h4>Desa Wisata Gamplong</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KawasanWisataSosrowijayan/400/250" loading="lazy">
+            <h4>Kawasan Wisata Sosrowijayan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/GrojoganWatuPurboBangunrejo/400/250" loading="lazy">
+            <h4>Grojogan Watu Purbo Bangunrejo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/Kalibiru%2C_Bluriver.jpg" loading="lazy">
+            <h4>Wisata Alam Kalibiru</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/JogjaExotarium/400/250" loading="lazy">
+            <h4>Jogja Exotarium</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Bukit_Nglanggeran.jpg" loading="lazy">
+            <h4>Puncak Gunung Api Purba - Nglanggeran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flora_Indonesia.jpg/3840px-Flora_Indonesia.jpg" loading="lazy">
+            <h4>Bendung Lepen</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BunkerKaliademMerapi/400/250" loading="lazy">
+            <h4>Bunker Kaliadem Merapi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Ledoksambi.jpg" loading="lazy">
+            <h4>Ledok Sambi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/SeribuBatuSonggoLangit/400/250" loading="lazy">
+            <h4>Seribu Batu Songgo Langit</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Jomblang_Cave_-_Indonesia_04.jpg/3840px-Jomblang_Cave_-_Indonesia_04.jpg" loading="lazy">
+            <h4>Goa Jomblang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DesaWisataRumahDomes/Teletubbies/400/250" loading="lazy">
+            <h4>Desa Wisata Rumah Domes/Teletubbies</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BukitWisataPulepayung/400/250" loading="lazy">
+            <h4>Bukit Wisata Pulepayung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Gallery_room_of_Bentara_Budaya_Yogyakarta.jpg" loading="lazy">
+            <h4>Bentara Budaya Yogyakarta (BBY)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg/3840px-Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg" loading="lazy">
+            <h4>Goa Rancang Kencono</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/GoaCerme/400/250" loading="lazy">
+            <h4>Goa Cerme</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg/langid-500px-Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg.png" loading="lazy">
+            <h4>Wisata Kraton Jogja</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Rumah_Joglo_Muhadi.jpg/3840px-Rumah_Joglo_Muhadi.jpg" loading="lazy">
+            <h4>Desa Wisata Kelor</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/4/4a/KcmtBwi.jpg" loading="lazy">
+            <h4>Pantai Patihan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Pantai_Kukup-2.jpg" loading="lazy">
+            <h4>Pantai Kukup</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PantaiNgrawe(Mesra)/400/250" loading="lazy">
+            <h4>Pantai Ngrawe (Mesra)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Ngobaran_Beach.jpg/3840px-Ngobaran_Beach.jpg" loading="lazy">
+            <h4>Pantai Ngobaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg/3840px-Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg" loading="lazy">
+            <h4>Pantai Pulang Sawal</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Baron_Beach_Gunung_Kidul.jpg" loading="lazy">
+            <h4>Pantai Baron</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Delightful_Beach.jpg/3840px-Delightful_Beach.jpg" loading="lazy">
+            <h4>Pantai Pok Tunggal</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Big_Stone_at_Hutan_Pinus_Pengger_Jogja.jpg/3840px-Big_Stone_at_Hutan_Pinus_Pengger_Jogja.jpg" loading="lazy">
+            <h4>Hutan Pinus Asri</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PasarKebonEmpringBintaran/400/250" loading="lazy">
+            <h4>Pasar Kebon Empring Bintaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Bukit_Paralayang_-_Pantai_Parangtritits.jpg" loading="lazy">
+            <h4>Bukit Paralayang, Watugupit</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KampungWisataDipowinatan/400/250" loading="lazy">
+            <h4>Kampung Wisata Dipowinatan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pandansimo_Bridge_view_toward_Bantul.jpg/3840px-Pandansimo_Bridge_view_toward_Bantul.jpg" loading="lazy">
+            <h4>Watu Mabur Mangunan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PintoeLangitDahromo/400/250" loading="lazy">
+            <h4>Pintoe Langit Dahromo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Locator_Kecamatan_Gedangsari_ing_Gunung_Kidul.png" loading="lazy">
+            <h4>Green Village Gedangsari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Kebun_Teh_Nglinggo.jpg" loading="lazy">
+            <h4>Kebun Teh Nglinggo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/GeoforestWatuPayungTurunan/400/250" loading="lazy">
+            <h4>Geoforest Watu Payung Turunan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Gondala_pantai_Timang_-_Gunung_Kidul%2C_DIY.jpg/3840px-Gondala_pantai_Timang_-_Gunung_Kidul%2C_DIY.jpg" loading="lazy">
+            <h4>Pantai Timang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Bledug_Kuwu_2.jpg" loading="lazy">
+            <h4>Puncak Segoro</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Pradaksina.jpg/3840px-Pradaksina.jpg" loading="lazy">
+            <h4>Candi Borobudur</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Candi_Ijo.JPG" loading="lazy">
+            <h4>Candi Ijo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Dusk_till_dawn_%28cropped%29.jpg" loading="lazy">
+            <h4>Pantai Indrayanti</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Afternoon_at_Nglambor_Beach.jpg/3840px-Afternoon_at_Nglambor_Beach.jpg" loading="lazy">
+            <h4>Pantai Nglambor</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Bringharjo_Market_Yogyakarta_-_Pasar_Bringharjo_Jogja_%282025%29_-_img_06.jpg/3840px-Bringharjo_Market_Yogyakarta_-_Pasar_Bringharjo_Jogja_%282025%29_-_img_06.jpg" loading="lazy">
+            <h4>Pasar Beringharjo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Papan_penanda_di_area_Museum_Ullen_Sentalu%2C_Kaliurang.jpg" loading="lazy">
+            <h4>Museum Ullen Sentalu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Museum_Gunungapi_Merapi.jpg/3840px-Museum_Gunungapi_Merapi.jpg" loading="lazy">
+            <h4>Museum Gunung Merapi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Dusk_till_dawn_%28cropped%29.jpg" loading="lazy">
+            <h4>Pantai Parangtritis</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Pindul_Cave%2C_Indonesia.JPG" loading="lazy">
+            <h4>Goa Pindul</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Kraton_Ratu_Boko_%28Ratu_Boko_Temple%29_in_Yogyakarta%2C_Indonesia_03.jpg/3840px-Kraton_Ratu_Boko_%28Ratu_Boko_Temple%29_in_Yogyakarta%2C_Indonesia_03.jpg" loading="lazy">
+            <h4>Candi Ratu Boko</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Jogja_bay_Volcano_Coaster.jpg" loading="lazy">
+            <h4>Pantai Depok Jogja</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg/3840px-Yogyakarta_Indonesia_Kraton-the-Sultans-Palace-02.jpg" loading="lazy">
+            <h4>Pantai Sundak</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/HutanMangroveKulonProgo/400/250" loading="lazy">
+            <h4>Hutan Mangrove Kulon Progo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/Jogja_bay_Volcano_Coaster.jpg" loading="lazy">
+            <h4>Jogja Bay Pirates Adventure Waterpark</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PantaiSepanjang/400/250" loading="lazy">
+            <h4>Pantai Sepanjang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Matahari_terbenam_di_Pantai_Slili.jpg" loading="lazy">
+            <h4>Pantai Krakal</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Glagah_Beach_Kulon_Progo.jpg" loading="lazy">
+            <h4>Pantai Glagah</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/WATU_TOGOG_PANTAI_SIUNG.jpg" loading="lazy">
+            <h4>Pantai Siung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Dusk_till_dawn_%28cropped%29.jpg" loading="lazy">
+            <h4>Pantai Sadranan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flora_Indonesia.jpg/3840px-Flora_Indonesia.jpg" loading="lazy">
+            <h4>Pantai Nguluran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Pertunjukan_Jathilan.jpg" loading="lazy">
+            <h4>Pantai Samas</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Pantai_Drini_Top_View.jpg/3840px-Pantai_Drini_Top_View.jpg" loading="lazy">
+            <h4>Pantai Drini</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Air_terjun_Sri_Gethuk.jpg" loading="lazy">
+            <h4>Air Terjun Sri Gethuk</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Candi_Sewu_viewed_from_the_south%2C_23_November_2013.jpg/3840px-Candi_Sewu_viewed_from_the_south%2C_23_November_2013.jpg" loading="lazy">
+            <h4>Candi Sewu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Wediombo_Beach_4.jpg/3840px-Wediombo_Beach_4.jpg" loading="lazy">
+            <h4>Pantai Wediombo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Indonesia_location_map.svg/langid-1280px-Indonesia_location_map.svg.png" loading="lazy">
+            <h4>Pantai Jogan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Pantai_Ngrenehan.jpg/3840px-Pantai_Ngrenehan.jpg" loading="lazy">
+            <h4>Pantai Ngrenehan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Pantai_Jungwook.jpg" loading="lazy">
+            <h4>Pantai Jungwok</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flora_Indonesia.jpg/3840px-Flora_Indonesia.jpg" loading="lazy">
+            <h4>Pantai Greweng</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flora_Indonesia.jpg/3840px-Flora_Indonesia.jpg" loading="lazy">
+            <h4>Pantai Sedahan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Locator_Kecamatan_Tanjungsari_ing_Gunung_Kidul.png" loading="lazy">
+            <h4>Pantai Watu Kodok</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Kesirat_Beach.jpg/3840px-Kesirat_Beach.jpg" loading="lazy">
+            <h4>Pantai Kesirat</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/Dusk_till_dawn_%28cropped%29.jpg" loading="lazy">
+            <h4>Pantai Ngandong</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/d/d0/Plaza_Asia_Tasikmalaya_logo.png" loading="lazy">
+            <h4>Galaxy Waterpark Jogja</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DesaWisataPulesari/400/250" loading="lazy">
+            <h4>Desa Wisata Pulesari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DesaWisataTembi/400/250" loading="lazy">
+            <h4>Desa Wisata Tembi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Perundingan_Kaliurang.jpg/3840px-Perundingan_Kaliurang.jpg" loading="lazy">
+            <h4>Wisata Kaliurang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/HehaSkyView/400/250" loading="lazy">
+            <h4>Heha Sky View</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanSungaiMudal/400/250" loading="lazy">
+            <h4>Taman Sungai Mudal</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Flora_Indonesia.jpg/3840px-Flora_Indonesia.jpg" loading="lazy">
+            <h4>Pantai Sanglen</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Kedung-pedut_3.jpg" loading="lazy">
+            <h4>Pantai Congot</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Panoramic_View_of_Kawah_Ratu_Crater_in_Mt.Tangkuban_Perahu.jpg/3840px-Panoramic_View_of_Kawah_Ratu_Crater_in_Mt.Tangkuban_Perahu.jpg" loading="lazy">
+            <h4>GunungTangkuban perahu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Jl_Braga_Street_Sign_in_Bandung.jpg" loading="lazy">
+            <h4>Jalan Braga</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Gedung_Sate_Oktober_2024_-_Rahmatdenas.jpg/3840px-Gedung_Sate_Oktober_2024_-_Rahmatdenas.jpg" loading="lazy">
+            <h4>Gedung Sate</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/d/d4/Trans_Studio_logo_2011.svg/langid-60px-Trans_Studio_logo_2011.svg.png" loading="lazy">
+            <h4>Trans Studio Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Taman_Hutan_Raya_IR_Djuanda.jpg" loading="lazy">
+            <h4>Taman Hutan Raya Ir. H. Djuanda</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Gunung_Batu.jpg/3840px-Gunung_Batu.jpg" loading="lazy">
+            <h4>Farm House Susu Lembang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Bandung_Zoo_main_gate.JPG" loading="lazy">
+            <h4>Kebun Binatang Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Kawah_Putih_Lake_from_the_viewing_platform%2C_Bandung_Regency%2C_2014-08-21.jpg/3840px-Kawah_Putih_Lake_from_the_viewing_platform%2C_Bandung_Regency%2C_2014-08-21.jpg" loading="lazy">
+            <h4>Kawah Putih</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/9/9d/20140730_tebing_keraton.jpg" loading="lazy">
+            <h4>Tebing Karaton</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Desa_Sade%2C_Lombok.jpg/3840px-Desa_Sade%2C_Lombok.jpg" loading="lazy">
+            <h4>Dusun Bambu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Bandung%2C_Museum_Geologi.jpg/3840px-Bandung%2C_Museum_Geologi.jpg" loading="lazy">
+            <h4>Museum Geologi Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Musium_KAA.jpg" loading="lazy">
+            <h4>Museum Konferensi Asia Afrika</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Masjid_Raya_Bandung_dan_Alun-alun_Bandung_%28potrait%29.jpg/3840px-Masjid_Raya_Bandung_dan_Alun-alun_Bandung_%28potrait%29.jpg" loading="lazy">
+            <h4>Masjid Raya Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DagoDreampark/400/250" loading="lazy">
+            <h4>Dago Dreampark</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/OrchidForestCikole/400/250" loading="lazy">
+            <h4>Orchid Forest Cikole</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KawasanPunclut/400/250" loading="lazy">
+            <h4>Kawasan Punclut</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/COLLECTIE_TROPENMUSEUM_De_waringins_op_de_alun-alun_bij_de_ingang_van_de_kraton_van_de_sultan_van_Jogjakarta_TMnr_60022716.jpg" loading="lazy">
+            <h4>Alun-Alun Kota Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sri_Baduga_Museum.JPG/3840px-Sri_Baduga_Museum.JPG" loading="lazy">
+            <h4>Museum Sri Baduga</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Top_15_Indonesian_Idol_14.jpg" loading="lazy">
+            <h4>Rabbit Town</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/View_from_bridge_-_panoramio_%282%29.jpg" loading="lazy">
+            <h4>Stone Garden Citatah</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Gunung_Batu.jpg/3840px-Gunung_Batu.jpg" loading="lazy">
+            <h4>The Great Asia Africa</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Tebing_Karaton_Bandung_Regency.jpg" loading="lazy">
+            <h4>Bukit Moko</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Indonesia_-_papandayan_4.jpg" loading="lazy">
+            <h4>Gunung Papandayan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Steven_Spielberg_at_Berlinale_2023_Ausschnitt.jpg/3840px-Steven_Spielberg_at_Berlinale_2023_Ausschnitt.jpg" loading="lazy">
+            <h4>Amazing Art World</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Taman_Hutan_Raya_IR_Djuanda.jpg" loading="lazy">
+            <h4>Gua Belanda</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Taman_Balai_Kota_Bandung.jpg/3840px-Taman_Balai_Kota_Bandung.jpg" loading="lazy">
+            <h4>Taman Balai Kota Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PanghegarWaterboomBandung/400/250" loading="lazy">
+            <h4>Panghegar Waterboom Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Mont_Manglayang.jpg" loading="lazy">
+            <h4>Gunung Manglayang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/LembangPark&Zoo/400/250" loading="lazy">
+            <h4>Lembang Park & Zoo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Lokomotif_Bima_Kunting_1_di_Taman_Lalu_Lintas_Bandung_2018.png" loading="lazy">
+            <h4>Taman Lalu Lintas Ade Irma Suryani Nasution</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/LawangwangiCreativeSpace/400/250" loading="lazy">
+            <h4>Lawangwangi Creative Space</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Taman_Hutan_Raya_IR_Djuanda.jpg" loading="lazy">
+            <h4>Curug Dago</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Busway_in_Bundaran_HI.jpg/3840px-Busway_in_Bundaran_HI.jpg" loading="lazy">
+            <h4>Kampung Korea Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/RSUD_Al_Ihsan_2.jpg" loading="lazy">
+            <h4>Kampung Batu Malakasari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Azure_Window_2009.JPG" loading="lazy">
+            <h4>Jendela Alam</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Curug_Bugbrug.jpg/3840px-Curug_Bugbrug.jpg" loading="lazy">
+            <h4>Curug Tilu Leuwi Opat</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KiaraArthaPark/400/250" loading="lazy">
+            <h4>Kiara Artha Park</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Nugallery.jpg" loading="lazy">
+            <h4>NuArt Sculpture Park</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/UpsideDownWorldBandung/400/250" loading="lazy">
+            <h4>Upside Down World Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PesonaNirwanaWaterpark&Cottages/400/250" loading="lazy">
+            <h4>Pesona Nirwana Waterpark & Cottages</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanLansia/400/250" loading="lazy">
+            <h4>Taman Lansia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KampoengTulip/400/250" loading="lazy">
+            <h4>Kampoeng Tulip</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Dongker_Photo_2025.png/3840px-Dongker_Photo_2025.png" loading="lazy">
+            <h4>Selasar Sunaryo Art Space</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TerasCikapundungBBWS/400/250" loading="lazy">
+            <h4>Teras Cikapundung BBWS</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Tampak_Samping_Museum_Barli_2023-03-18.jpg" loading="lazy">
+            <h4>Museum Barli</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/WisataBatuKuda/400/250" loading="lazy">
+            <h4>Wisata Batu Kuda</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/MonumenBandungLautanApi/400/250" loading="lazy">
+            <h4>Monumen Bandung Lautan Api</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Museum_Gedung_Sate.jpg/3840px-Museum_Gedung_Sate.jpg" loading="lazy">
+            <h4>Museum Gedung Sate</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Monumen_Perjuangan_Rakyat_Jawa_Barat_01.jpg/3840px-Monumen_Perjuangan_Rakyat_Jawa_Barat_01.jpg" loading="lazy">
+            <h4>Monumen Perjuangan Rakyat Jawa Barat</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Kantor_Pusat_Pos_Indonesia.JPG" loading="lazy">
+            <h4>Museum Pos Indonesia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/CiwangunIndahCampOfficial/400/250" loading="lazy">
+            <h4>Ciwangun Indah Camp Official</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wot_Batu.jpg/3840px-Wot_Batu.jpg" loading="lazy">
+            <h4>Wot Batu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/CurugBatuTemplek/400/250" loading="lazy">
+            <h4>Curug Batu Templek</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Tampak_Depan_Gereja_Katedral_Bandung.png" loading="lazy">
+            <h4>Gereja Katedral Santo Petrus Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Museum_Mandala_Wangsit_Siliwangi.JPG" loading="lazy">
+            <h4>Museum Mandala Wangsit Siliwangi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Sunda_Kingdom_id.svg/langid-960px-Sunda_Kingdom_id.svg.png" loading="lazy">
+            <h4>Caringin Tilu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/KRI_Teluk_Bone_%28511%29.jpg" loading="lazy">
+            <h4>Panama Park 825</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Untuksiapa.jpg/3840px-Untuksiapa.jpg" loading="lazy">
+            <h4>Sudut Pandang Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Mont_Manglayang.jpg" loading="lazy">
+            <h4>Bumi Perkemahan Batu Kuda</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Bukit_bintang_from_kl_monorail_2009.jpg" loading="lazy">
+            <h4>Bukit Bintang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanVanda/400/250" loading="lazy">
+            <h4>Taman Vanda</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/0/0a/Patung_Wisnu_di_GWK.jpeg" loading="lazy">
+            <h4>Taman Budaya Jawa Barat</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Curug_Bugbrug.jpg/3840px-Curug_Bugbrug.jpg" loading="lazy">
+            <h4>Curug Bugbrug</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BabakanSiliwangiCityForestPathBandung/400/250" loading="lazy">
+            <h4>Babakan Siliwangi City Forest Path Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Curug_Cibeureum.jpg" loading="lazy">
+            <h4>Curug Cipanas</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanJomblo/400/250" loading="lazy">
+            <h4>Taman Jomblo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Linkin_Park_-_From_Zero_Lead_Press_Photo_-_James_Minchin_III.jpg/3840px-Linkin_Park_-_From_Zero_Lead_Press_Photo_-_James_Minchin_III.jpg" loading="lazy">
+            <h4>Peta Park</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/MasjidDaarutTauhiidBandung/400/250" loading="lazy">
+            <h4>Masjid Daarut Tauhiid Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/MasjidAgungTransStudioBandung/400/250" loading="lazy">
+            <h4>Masjid Agung Trans Studio Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Gereja_Tiberias_Indonesia_Boulevard_Utara_Jakarta.jpg" loading="lazy">
+            <h4>Gereja Tiberias Indonesia Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TektonaWaterpark/400/250" loading="lazy">
+            <h4>Tektona Waterpark</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/CurugCilengkrang/400/250" loading="lazy">
+            <h4>Curug Cilengkrang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Bandung_Pasupati_Skyline.jpg" loading="lazy">
+            <h4>Jembatan Pasupati</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Pasar_Baru_Jakarta_Pusat.JPG" loading="lazy">
+            <h4>Pasar Baru</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Taman_Balai_Kota_Bandung.jpg/3840px-Taman_Balai_Kota_Bandung.jpg" loading="lazy">
+            <h4>Taman Sejarah Bandung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/RoemahSeniSarasvati/400/250" loading="lazy">
+            <h4>Roemah Seni Sarasvati</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Science_Center%2C_Puspa_Iptek%2C_Kota_Baru_Parahyangan_-_panoramio_%281%29.jpg" loading="lazy">
+            <h4>Puspa Iptek Sundial</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/4/4f/Masjid_Salman_ITB.jpg" loading="lazy">
+            <h4>Masjid Salman ITB</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Gunung_Aseupan_dilihat_dari_sisi_utara_tahun_2025_%28cropped%29.jpg" loading="lazy">
+            <h4>Curug Aseupan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Logo_Museum_Nasional_PNG.png" loading="lazy">
+            <h4>Museum Pendidikan Nasional</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/a/a0/OPI_Mall_logo.png" loading="lazy">
+            <h4>Water Park Bandung Indah</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Anom_Waterfall_Bottom_View.jpg/3840px-Anom_Waterfall_Bottom_View.jpg" loading="lazy">
+            <h4>Curug Anom</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Rhino_collage.png" loading="lazy">
+            <h4>Taman Badak</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanFilm/400/250" loading="lazy">
+            <h4>Taman Film</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/e/e9/Nike_Ardilla.jpg" loading="lazy">
+            <h4>Museum Nike Ardilla</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BatununggalIndahClub/400/250" loading="lazy">
+            <h4>Batununggal Indah Club</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/6/65/InterContinental_Bandung_logo.png" loading="lazy">
+            <h4>Mountain View Golf Club</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Indonesia_Java_relief_location_map.png" loading="lazy">
+            <h4>Gunung Lalakon</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Kahuripan_in_Kadungora.jpg/3840px-Kahuripan_in_Kadungora.jpg" loading="lazy">
+            <h4>Sendang Geulis Kahuripan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Sanghyang_Heuleut_Lake_Is_Hidden_Paradise_at_West_Java.jpg/3840px-Sanghyang_Heuleut_Lake_Is_Hidden_Paradise_at_West_Java.jpg" loading="lazy">
+            <h4>Sanghyang Heuleut</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/LerengAntengPanoramicCoffeePlace/400/250" loading="lazy">
+            <h4>Lereng Anteng Panoramic Coffee Place</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Two_Trans_Metro_Bandung%27s_Nucleus_Bus_at_Cicaheum.jpg/3840px-Two_Trans_Metro_Bandung%27s_Nucleus_Bus_at_Cicaheum.jpg" loading="lazy">
+            <h4>Masjid Pusdai</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Masjid_Al-Imtizaj_2.jpg" loading="lazy">
+            <h4>Masjid Al-Imtizaj</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Cileunca_Lake.jpg" loading="lazy">
+            <h4>Situ Cileunca</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/SunrisePointCukul/400/250" loading="lazy">
+            <h4>Sunrise Point Cukul</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/SungaiPalayangan/400/250" loading="lazy">
+            <h4>Sungai Palayangan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Gunung_Malabar.jpg/3840px-Gunung_Malabar.jpg" loading="lazy">
+            <h4>Perkebunan Teh Malabar</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PemandianAirPanasCiater/400/250" loading="lazy">
+            <h4>Pemandian Air Panas Ciater</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Bosscha_001.JPG" loading="lazy">
+            <h4>Observatorium Bosscha</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanBungaCihideung/400/250" loading="lazy">
+            <h4>Taman Bunga Cihideung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TheLodgeMaribaya/400/250" loading="lazy">
+            <h4>The Lodge Maribaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Taman_Hutan_Raya_IR_Djuanda.jpg" loading="lazy">
+            <h4>Taman Hutan Raya Ir. H. Juanda</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/DJI_0128_Bali_Botanic_Garden.jpg/3840px-DJI_0128_Bali_Botanic_Garden.jpg" loading="lazy">
+            <h4>Taman Begonia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TafsoBarn/400/250" loading="lazy">
+            <h4>Tafso Barn</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Curug-ngumpet.jpg" loading="lazy">
+            <h4>Curug Luhur Waterfall</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Bosscha_001.JPG" loading="lazy">
+            <h4>Curug Malela</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/COLLECTIE_TROPENMUSEUM_Waterval_in_de_omgeving_van_Tjisaroea_en_Tjimahi_TMnr_60050403.jpg" loading="lazy">
+            <h4>Curug Cimahi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Junghuhn_See_Telaga_Patengan_auf_Java.jpg" loading="lazy">
+            <h4>Situ Patenggang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Kawah_Putih_Lake.jpg" loading="lazy">
+            <h4>Kawah Rengganis Cibuni</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PemandianAirPanasCimanggu/400/250" loading="lazy">
+            <h4>Pemandian Air Panas Cimanggu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Junghuhn_See_Telaga_Patengan_auf_Java.jpg" loading="lazy">
+            <h4>Glamping Lakeside Rancabali</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Sunrise_dibukit_jamur.jpg/3840px-Sunrise_dibukit_jamur.jpg" loading="lazy">
+            <h4>Bukit Jamur</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Cats_Whiskers_%282074039768%29.jpg" loading="lazy">
+            <h4>Kebun Tanaman Obat Sari Alam</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/HappyfarmCiwidey/400/250" loading="lazy">
+            <h4>Happyfarm Ciwidey</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Saung_Angklung_Udjo.JPG" loading="lazy">
+            <h4>Saung Angklung Mang Udjo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanKupu-KupuCihanjuang/400/250" loading="lazy">
+            <h4>Taman Kupu-Kupu Cihanjuang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Istana_Anak-anak_Indonesia_TMII_%282025%29_-_img_01.jpg/3840px-Istana_Anak-anak_Indonesia_TMII_%282025%29_-_img_01.jpg" loading="lazy">
+            <h4>Taman Miniatur Kereta Api</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Gua_Pawon.jpg/3840px-Gua_Pawon.jpg" loading="lazy">
+            <h4>Gua Pawon</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/BukitGantoleCililin/400/250" loading="lazy">
+            <h4>Bukit Gantole Cililin</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Perjalanan_Bus_Bandros.jpg" loading="lazy">
+            <h4>Bandros City Tour</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/e/e1/BEASTARS%2C_volume_1.jpg" loading="lazy">
+            <h4>Kyotoku Floating Market</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Meikarta_Tower_Distrik_1.jpg" loading="lazy">
+            <h4>Rainbow Garden</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KotaMini/400/250" loading="lazy">
+            <h4>Kota Mini</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/ChinguCafeLittleSeoul/400/250" loading="lazy">
+            <h4>Chingu Cafe Little Seoul</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Gedong_songo.jpg" loading="lazy">
+            <h4>Candi Gedong Songo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Anjungan_Kota_Semarang.jpg" loading="lazy">
+            <h4>Grand Maerakaca</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Kampung_Tridi%2C_Malang_32.jpg/3840px-Kampung_Tridi%2C_Malang_32.jpg" loading="lazy">
+            <h4>Kampung Pelangi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Lawang_sewu_semarang.jpg/3840px-Lawang_sewu_semarang.jpg" loading="lazy">
+            <h4>Lawang Sewu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Sam_Po_Kong_Temple_Semarang_Indonesia.jpg" loading="lazy">
+            <h4>Sam Poo Kong Temple</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DesaWisataLembahKalipancur/400/250" loading="lazy">
+            <h4>Desa Wisata Lembah Kalipancur</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Indonesia_location_map.svg/langid-1280px-Indonesia_location_map.svg.png" loading="lazy">
+            <h4>Hutan Wisata Tinjomoyo Semarang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Top_15_Indonesian_Idol_14.jpg" loading="lazy">
+            <h4>Taman Kasmaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Fault_line_land_movement_in_Indonesia_ESA400906.gif" loading="lazy">
+            <h4>Pantai Baruna</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Indonesia_location_map.svg/langid-1280px-Indonesia_location_map.svg.png" loading="lazy">
+            <h4>Pantai Marina</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KampoengDjadhoelSemarang/400/250" loading="lazy">
+            <h4>Kampoeng Djadhoel Semarang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Taman_indonesia_kaya.jpg/3840px-Taman_indonesia_kaya.jpg" loading="lazy">
+            <h4>Indonesia Kaya Park</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Lawang_Sewu_in_Semarang_City.jpg/3840px-Lawang_Sewu_in_Semarang_City.jpg" loading="lazy">
+            <h4>Taman Pandanaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/PuraGiriNatha/400/250" loading="lazy">
+            <h4>Pura Giri Natha</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Bali_Barat_mangroves.jpg/3840px-Bali_Barat_mangroves.jpg" loading="lazy">
+            <h4>Wisata Mangrove Tapak</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Logo_Kementerian_Pekerjaan_Umum_Republik_Indonesia.svg/langid-960px-Logo_Kementerian_Pekerjaan_Umum_Republik_Indonesia.svg.png" loading="lazy">
+            <h4>Pantai Cipta</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/OldCity3DTrickArtMuseum/400/250" loading="lazy">
+            <h4>Old City 3D Trick Art Museum</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Exterior_of_Blenduk_Church%2C_Semarang%2C_2014-06-18.jpg/3840px-Exterior_of_Blenduk_Church%2C_Semarang%2C_2014-06-18.jpg" loading="lazy">
+            <h4>GPIB Immanuel Semarang (Gereja Blenduk)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Lesser_racket-tailed_drongo_%28Dicrurus_remifer_tectirostris%29.jpg" loading="lazy">
+            <h4>Taman Srigunting</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/SemarangContemporaryArtGallery/400/250" loading="lazy">
+            <h4>Semarang Contemporary Art Gallery</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Gunungungaran.jpg" loading="lazy">
+            <h4>Umbul Sidomukti</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/de/Saloka_Park_Logo.png" loading="lazy">
+            <h4>Saloka Theme Park</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/WisataAlamWanaWisataPenggaron/400/250" loading="lazy">
+            <h4>Wisata Alam Wana Wisata Penggaron</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/langid-960px-Flag_of_Indonesia.svg.png" loading="lazy">
+            <h4>Masjid Kapal Semarang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Celosia_argentea_jengger_ayam.jpg" loading="lazy">
+            <h4>Taman Bunga Celosia</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Indonesia_provinces_blank_map.svg/langid-960px-Indonesia_provinces_blank_map.svg.png" loading="lazy">
+            <h4>Air Terjun Kali Pancur</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/WisataKampungKrisanClapar/400/250" loading="lazy">
+            <h4>Wisata Kampung Krisan Clapar</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Rawa_Pening_Central_Java.jpg" loading="lazy">
+            <h4>Danau Rawa Pening</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/Mancing_mania_%2819020077606%29.jpg" loading="lazy">
+            <h4>Pantai Maron</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/WaterBlasterBukitCandiGolf/400/250" loading="lazy">
+            <h4>Water Blaster Bukit Candi Golf</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Indonesia_location_map.svg/langid-1280px-Indonesia_location_map.svg.png" loading="lazy">
+            <h4>Waduk Jatibarang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TirtoArgoSiwarak/400/250" loading="lazy">
+            <h4>Tirto Argo Siwarak</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Indonesia_Sleman_Regency_location_map.svg/langid-1280px-Indonesia_Sleman_Regency_location_map.svg.png" loading="lazy">
+            <h4>Wisata Lereng Kelir</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Rawa_Pening_Central_Java.jpg" loading="lazy">
+            <h4>Kampoeng Rawa</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/The_British_Occupation_of_Java_SE5896.jpg" loading="lazy">
+            <h4>Monumen Palagan Ambarawa</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/DSCN73644_-_Benteng_Fort_Willem_1.jpg/3840px-DSCN73644_-_Benteng_Fort_Willem_1.jpg" loading="lazy">
+            <h4>Benteng Pendem</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Ambarawa_Bypass_Road_from_Eling_Bening%2C_2017-03-15.jpg/3840px-Ambarawa_Bypass_Road_from_Eling_Bening%2C_2017-03-15.jpg" loading="lazy">
+            <h4>Wisata Eling Bening</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/St_Mary_statue_at_Maria_Kerep_Cave%2C_Ambarawa.jpg" loading="lazy">
+            <h4>Gua Maria Kerep Ambarawa</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/%22%2Barya%2B%22_stasiun_ambarawa_museum_2023_2.jpg/3840px-%22%2Barya%2B%22_stasiun_ambarawa_museum_2023_2.jpg" loading="lazy">
+            <h4>Museum Kereta Ambarawa</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Pandansimo_Bridge_view_toward_Bantul.jpg/3840px-Pandansimo_Bridge_view_toward_Bantul.jpg" loading="lazy">
+            <h4>Hutan Pinus Kayon</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Lawang_Sewu_in_Semarang_City.jpg/3840px-Lawang_Sewu_in_Semarang_City.jpg" loading="lazy">
+            <h4>Kota Lama Semarang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/5/5d/Gedung_Depan_SMP_PL_Domenico_Savio.jpg" loading="lazy">
+            <h4>Semarang Chinatown</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Sainte_Chapelle_-_Upper_level_1.jpg" loading="lazy">
+            <h4>La Kana Chapel</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/IWM-SE-5865-tank-Surabaya-19451127.jpg" loading="lazy">
+            <h4>Jembatan Biru Ambarawa</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/GoaRong/400/250" loading="lazy">
+            <h4>Goa Rong</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Borobudur%2C_Java%2C_Indonesia%2C_20220817_1016_8757.jpg/3840px-Borobudur%2C_Java%2C_Indonesia%2C_20220817_1016_8757.jpg" loading="lazy">
+            <h4>Masjid Agung Ungaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Tugu_Muda_Landscape.jpg/3840px-Tugu_Muda_Landscape.jpg" loading="lazy">
+            <h4>Tugu Muda Semarang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/Museum_Kopi_Banaran.jpg" loading="lazy">
+            <h4>Kampoeng Kopi Banaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Mascot_for_2024_Depok_mayoral_election.png" loading="lazy">
+            <h4>Taman Tabanas</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Siti_Nurhaliza_-_Khairul_Fahmi%27s_Wedding_2013.jpg" loading="lazy">
+            <h4>Kampung Tematik Jawi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Borobudur%2C_Java%2C_Indonesia%2C_20220817_1016_8757.jpg/3840px-Borobudur%2C_Java%2C_Indonesia%2C_20220817_1016_8757.jpg" loading="lazy">
+            <h4>Kampung Batik Gedong Semarang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Indonesia_provinces_blank_map.svg/langid-960px-Indonesia_provinces_blank_map.svg.png" loading="lazy">
+            <h4>Air Terjun Semirang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/ObyekWisataGoaKreo/400/250" loading="lazy">
+            <h4>Obyek Wisata Goa Kreo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Mount_Bromo_at_sunrise%2C_showing_its_volcanoes_and_Mount_Semeru_%28background%29.jpg" loading="lazy">
+            <h4>Watu Gunung Ungaran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Brown_Canyon_1.jpg/3840px-Brown_Canyon_1.jpg" loading="lazy">
+            <h4>Brown Canyon</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/DurianGardensandTourismEducationWatuSimbar/400/250" loading="lazy">
+            <h4>Durian Gardens and Tourism Education Watu Simbar</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/FlowerFarmSetiyaAji/400/250" loading="lazy">
+            <h4>Flower Farm Setiya Aji</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Bali_Barat_mangroves.jpg/3840px-Bali_Barat_mangroves.jpg" loading="lazy">
+            <h4>Ekowisata Mangrove Wonorejo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanHarmoniKeputih/400/250" loading="lazy">
+            <h4>Taman Harmoni Keputih</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/AirMancurMenari/400/250" loading="lazy">
+            <h4>Air Mancur Menari</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanPrestasi/400/250" loading="lazy">
+            <h4>Taman Prestasi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Submarine_Monument_Surabaya_2.JPG" loading="lazy">
+            <h4>Monumen Kapal Selam</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Locator_Kecamatan_Rungkut_di_Kota_Surabaya.png" loading="lazy">
+            <h4>Taman Kunang-Kunang</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Bom_Surabaya_2018.jpg" loading="lazy">
+            <h4>Taman Buah Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Taman_Pelangi_Bus_stop_-_April_2026.jpg" loading="lazy">
+            <h4>Taman Pelangi</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Jembatan_suroboyo_dusk.jpg" loading="lazy">
+            <h4>Hutan Bambu Keputih</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg/langid-500px-Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg.png" loading="lazy">
+            <h4>Taman Keputran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Pakuwon_Trade_Centre_Ekspansi_%2830632349775%29.jpg" loading="lazy">
+            <h4>Food Junction Grand Pakuwon</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/9/93/Taman_Dayu_Pasuruan.jpg" loading="lazy">
+            <h4>Taman Barunawati</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Unit_Trans_Semanggi_Suroboyo_K3L_di_Kenpark_%28Desember_2022%29.jpg/3840px-Unit_Trans_Semanggi_Suroboyo_K3L_di_Kenpark_%28Desember_2022%29.jpg" loading="lazy">
+            <h4>Kenjeran Park</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Jembatan_suroboyo_dusk.jpg" loading="lazy">
+            <h4>Surabaya North Quay</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/KebunBibitWonorejo/400/250" loading="lazy">
+            <h4>Kebun Bibit Wonorejo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Plaza_Taman_Ismail_Marzuki.jpg/3840px-Plaza_Taman_Ismail_Marzuki.jpg" loading="lazy">
+            <h4>Taman Ekspresi Dan Perpustakaan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Papan_Edukasi_Jalak_Bali.jpg/3840px-Papan_Edukasi_Jalak_Bali.jpg" loading="lazy">
+            <h4>Kebun Binatang Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Papan_Nama_Rumah_Batik_Maranatha_Ong%27s_Art.jpg/3840px-Papan_Nama_Rumah_Batik_Maranatha_Ong%27s_Art.jpg" loading="lazy">
+            <h4>Rumah Batik</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Gerbang_CitraIndah_City_Jonggol.jpg/3840px-Gerbang_CitraIndah_City_Jonggol.jpg" loading="lazy">
+            <h4>Ciputra Waterpark</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Masjid_Muhammad_Cheng_Ho_Balikpapan_%2801%29.jpg/3840px-Masjid_Muhammad_Cheng_Ho_Balikpapan_%2801%29.jpg" loading="lazy">
+            <h4>Masjid Muhammad Cheng Hoo</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/thumb/9/95/Masjid_Nasional_Al-Akbar_Surabaya_2016.jpg/3840px-Masjid_Nasional_Al-Akbar_Surabaya_2016.jpg" loading="lazy">
+            <h4>Masjid Nasional Al-Akbar</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/MuseumTNIALLokaJalaCrana/400/250" loading="lazy">
+            <h4>Museum TNI AL Loka Jala Crana</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Wajah_Baru_Jembatan_Merah_Putih_kota_Ambon.jpg" loading="lazy">
+            <h4>Jembatan Merah</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Bank_Indonesia_Lama.jpg/3840px-Bank_Indonesia_Lama.jpg" loading="lazy">
+            <h4>Museum De Javasche Bank</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg/langid-500px-Yogyakarta_Sultanate_Hamengkubhuwono_X_Emblem.svg.png" loading="lazy">
+            <h4>Keraton Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Giant_She_Mien_Fo_Statue_at_Sanggar_Agung_Temple%2C_Surabaya%2C_Indonesia.jpg" loading="lazy">
+            <h4>Klenteng Sanggar Agung</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/MuseumSepuluhNopemberKotaSurabaya/400/250" loading="lazy">
+            <h4>Museum Sepuluh Nopember Kota Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Tugu_Pahlawan_Surabaya.jpg" loading="lazy">
+            <h4>Monumen Tugu Pahlawan</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Tunjungan_Siola_di_2022.jpg/3840px-Tunjungan_Siola_di_2022.jpg" loading="lazy">
+            <h4>Surabaya Museum (Gedung Siola)</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Logo_Kementerian_Kesehatan_Republik_Indonesia_%282024_rev%29.svg/langid-960px-Logo_Kementerian_Kesehatan_Republik_Indonesia_%282024_rev%29.svg.png" loading="lazy">
+            <h4>Museum Kesehatan Dr. Adhyatma</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Jalesveva_Jayamahe_Monument%2C_Surabaya.jpg" loading="lazy">
+            <h4>Monumen Jalesveva Jayamahe</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Taman_suroboyo.jpg" loading="lazy">
+            <h4>Patung Sura dan Buaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Locator_Kecamatan_Kenjeran_di_Kota_Surabaya.png" loading="lazy">
+            <h4>Pantai Ria Kenjeran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Visual_K2_Trans_Jatim_Tribhuwana.jpg/3840px-Visual_K2_Trans_Jatim_Tribhuwana.jpg" loading="lazy">
+            <h4>Waterpark Kenjeran Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Jembatan_suroboyo_dusk.jpg" loading="lazy">
+            <h4>Balai Kota Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Prajnaparamita_Java_Side_Detail.JPG" loading="lazy">
+            <h4>Patung Buddha Empat Rupa</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Bambu_runcing%2C_Monumen_Jogja_Kembali.jpg/3840px-Bambu_runcing%2C_Monumen_Jogja_Kembali.jpg" loading="lazy">
+            <h4>Monumen Bambu Runcing Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/House_of_Sampoerna_Mei_2015.jpg/3840px-House_of_Sampoerna_Mei_2015.jpg" loading="lazy">
+            <h4>House of Sampoerna</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/AtlantisLandSurabaya/400/250" loading="lazy">
+            <h4>Atlantis Land Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanHiburanRakyat/400/250" loading="lazy">
+            <h4>Taman Hiburan Rakyat</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/COLLECTIE_TROPENMUSEUM_Blad_en_vrucht_van_de_Xanthochymus_dulcis_roxb_moendoe_TMnr_3401-1683.jpg" loading="lazy">
+            <h4>Taman Mundu</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Mpu_Tantular_Museum.jpg/3840px-Mpu_Tantular_Museum.jpg" loading="lazy">
+            <h4>Museum Mpu Tantular</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/id/6/6e/Taman_Bungkul_Surabaya_%281%29.png" loading="lazy">
+            <h4>Taman Bungkul</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://picsum.photos/seed/TamanAirMancurMenariKenjeran/400/250" loading="lazy">
+            <h4>Taman Air Mancur Menari Kenjeran</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/01_Papan_Nama_Terminal_Bratang.jpg/3840px-01_Papan_Nama_Terminal_Bratang.jpg" loading="lazy">
+            <h4>Taman Flora Bratang Surabaya</h4>
+        </div>
+    
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Church_of_the_Birth_of_Our_Lady%2C_Surabaya%2C_2025_%2801%29.jpg" loading="lazy">
+            <h4>Gereja Perawan Maria Tak Berdosa Surabaya</h4>
+        </div>
+    
+    </div>
+</body>
+</html>
