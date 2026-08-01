@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Travel Budgeting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' } // Mengaktifkan True Dark Mode
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Nunito', sans-serif; background-color: #f8fafc; }
+    @media print { aside, header, nav, button, .no-print { display: none !important; } main { margin: 0 !important; padding: 0 !important; width: 100% !important; background: white !important; } body { background: white !important; } }
+    ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f1f5f9; } ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    
+    /* Animasi Halus & Bertahap */
+    .view-enter { animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; }
+    @keyframes fadeSlideUp { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
+    
+    /* Utility untuk stagger (muncul bergantian) */
+    .stagger-1 { opacity: 0; animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.1s; }
+    .stagger-2 { opacity: 0; animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.2s; }
+    .stagger-3 { opacity: 0; animation: fadeSlideUp 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards 0.3s; }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 h-screen flex overflow-hidden text-slate-800 dark:text-slate-100 transition-colors duration-500">
+
+  <!-- SIDEBAR TETAP GELAP ELEGAN -->
+  <aside id="sidebar" class="w-64 bg-slate-900 text-white shadow-2xl z-50 relative transition-all duration-500 ease-in-out overflow-hidden flex-shrink-0 border-r border-slate-800">
+    <div class="w-64 h-full flex flex-col justify-between">
+      <div>
+        <div class="p-6 text-center border-b border-slate-800 flex justify-between items-center"><h1 class="text-2xl font-black tracking-wider w-full">Smart <span class="text-indigo-400">Budget</span></h1></div>
+        <nav class="p-4 space-y-2 mt-4">
+          <button id="navDashboard" class="w-full text-left px-4 py-3 rounded-xl bg-indigo-600 font-bold text-white transform hover:translate-x-2 transition-all duration-300 flex items-center gap-3 shadow-lg shadow-indigo-900/50"><span class="text-xl">📊</span> Dashboard</button>
+          <button id="navPlanTrip" class="w-full text-left px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white transform hover:translate-x-2 transition-all duration-300 flex items-center gap-3"><span class="text-xl">✨</span> Plan AI Trip</button>
+          <button id="navMyTrips" class="w-full text-left px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white transform hover:translate-x-2 transition-all duration-300 flex items-center gap-3"><span class="text-xl">🗺️</span> My Trips</button>
+          <button id="navPacking" class="w-full text-left px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white transform hover:translate-x-2 transition-all duration-300 flex items-center gap-3"><span class="text-xl">🎒</span> Smart Packing</button>
+          <button id="navNearMe" class="w-full text-left px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white transform hover:translate-x-2 transition-all duration-300 flex items-center gap-3"><span class="text-xl">📍</span> Destinasi Terdekat</button>
+        </nav>
+      </div>
+      <div class="p-4 border-t border-slate-800 space-y-2">
+        <button id="navSettings" class="w-full text-left px-4 py-3 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white transform hover:translate-x-2 transition-all duration-300 flex items-center gap-3"><span class="text-xl">⚙️</span> Settings</button>
+        <button id="btnLogout" class="w-full bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 rounded-xl transform hover:scale-105 transition-all duration-300 flex justify-center gap-2 hidden shadow-lg shadow-rose-500/30">Logout ➔</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="flex-1 flex flex-col overflow-hidden relative">
+    <!-- TOP NAVBAR -->
+    <header class="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-b border-slate-200 dark:border-slate-800 shadow-sm px-6 py-4 flex justify-between items-center transition-colors duration-500">
+      <div class="flex items-center gap-4">
+        <button id="sidebarToggle" class="p-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition"><svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path></svg></button>
+        <div class="hidden md:flex items-center gap-3 bg-indigo-50 dark:bg-indigo-900/50 rounded-full px-5 py-2 border border-indigo-100 dark:border-indigo-800/50"><h2 id="topNavTitle" class="text-sm font-black text-indigo-700 dark:text-indigo-300 tracking-widest uppercase">📊 Dashboard Analytics</h2></div>
+      </div>
+      <div class="flex items-center gap-6 text-sm font-bold text-slate-500 dark:text-slate-400">
+        <button onclick="window.openTnc()" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition hidden md:block">Syarat dan Ketentuan</button>
+        <a href="https://www.instagram.com/ilmanmaulana" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition flex items-center gap-2"><svg class="w-5 h-5 text-rose-500" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Hubungi Kami</a>
+        <button id="btnTopAuth" onclick="window.openAuth()" class="border-2 border-indigo-600 dark:border-indigo-500 text-indigo-700 dark:text-indigo-400 px-6 py-2 rounded-xl font-black hover:bg-indigo-600 hover:text-white transition shadow-sm">Masuk</button>
+      </div>
+    </header>
+
+<main class="flex-1 overflow-y-auto relative scroll-smooth bg-slate-50 dark:bg-slate-900 transition-colors duration-500" id="mainScrollArea">
+
+      <!-- DASHBOARD -->
+      <div id="viewDashboard" class="hidden p-4 md:p-8 space-y-6">
+        <div class="stagger-1 bg-gradient-to-r from-slate-900 to-indigo-900 rounded-3xl p-8 text-white shadow-xl flex flex-col md:flex-row justify-between items-center relative overflow-hidden border border-slate-700">
+          <div class="absolute -right-10 -top-10 w-40 h-40 bg-indigo-500 opacity-20 rounded-full blur-3xl"></div><div class="absolute -left-10 -bottom-10 w-40 h-40 bg-sky-400 opacity-10 rounded-full blur-3xl"></div>
+          <div class="z-10 mb-6 md:mb-0 text-center md:text-left w-full md:w-auto"><h2 class="text-3xl font-black mb-2 tracking-wide">Halo, <span id="dashWelcomeName" class="text-sky-400">GUEST</span>! 🌍</h2><p class="text-slate-300 font-semibold text-sm">Berikut adalah ringkasan analitik dan wawasan perjalanan Anda.</p></div>
+          <div class="z-10 bg-white/5 backdrop-blur-md p-4 rounded-2xl border border-white/10 flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+            <div><p class="text-xs font-bold text-slate-300 uppercase tracking-widest mb-1 text-center sm:text-left">Target Budget</p><div class="flex items-center gap-2 justify-center sm:justify-start"><span class="text-xl font-black text-white" id="dashCurrencySymbol">Rp</span><input type="number" id="targetBudgetInput" placeholder="0" class="bg-transparent border-b-2 border-slate-500 text-white font-black text-2xl w-32 outline-none focus:border-sky-400 transition placeholder-slate-500 text-center sm:text-left"></div></div>
+            <button id="btnSetTarget" class="w-full sm:w-auto bg-indigo-600 hover:bg-indigo-500 text-white font-black px-6 py-3 rounded-xl transition shadow-lg shadow-indigo-600/30 mt-2 sm:mt-0">Set</button>
+          </div>
+        </div>
+        
+        <div class="stagger-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 transition duration-300"><p class="text-xs text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Total Rencana</p><p id="dashTotalExpense" class="text-xl font-black text-slate-800 dark:text-slate-100 mt-1">Rp 0</p></div>
+          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 transition duration-300"><p class="text-xs text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Kota Favorit</p><p id="dashFavCity" class="text-xl font-black text-indigo-600 dark:text-indigo-400 mt-1">-</p></div>
+          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:-translate-y-1 transition duration-300"><p class="text-xs text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Total Trip</p><p id="dashTotalTrips" class="text-xl font-black text-sky-600 dark:text-sky-400 mt-1">0 Trip</p></div>
+          <div class="bg-white dark:bg-slate-800 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 relative overflow-hidden group hover:-translate-y-1 transition duration-300"><p class="text-xs text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Status Budget</p><p id="dashBudgetStatus" class="text-lg font-black text-slate-400 dark:text-slate-500 mt-1">Belum Diatur</p><div class="w-full bg-slate-100 dark:bg-slate-700 rounded-full h-2.5 mt-3 overflow-hidden"><div id="budgetProgressBar" class="bg-slate-300 dark:bg-slate-600 h-2.5 rounded-full transition-all duration-1000" style="width: 0%"></div></div><p id="budgetPercentage" class="text-right text-[10px] font-extrabold text-slate-400 mt-1">0%</p></div>
+        </div>
+        
+        <div class="stagger-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center"><h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest w-full mb-4">Kategori Pengeluaran</h3><div class="w-64 relative"><canvas id="expensePieChart"></canvas></div></div>
+          <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700"><h3 class="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-4">Pengeluaran Kota</h3><div><canvas id="expenseBarChart"></canvas></div></div>
+        </div>
+        
+        <div class="stagger-3 grid grid-cols-1 md:grid-cols-3 gap-6 pb-12">
+          <div class="md:col-span-1 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col"><h3 class="text-sm font-black text-slate-700 dark:text-slate-200 uppercase tracking-widest mb-5 flex items-center gap-2"><span class="text-xl">🧠</span> AI Travel Insights</h3><div class="space-y-4 flex-1 flex flex-col justify-center"><div class="bg-indigo-50 dark:bg-indigo-900/30 p-4 rounded-xl border border-indigo-100 dark:border-indigo-800/50"><p class="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-1 uppercase tracking-wider">Rata-rata Biaya / Trip</p><p id="insightAvgCost" class="text-xl font-black text-indigo-900 dark:text-indigo-300">Rp 0</p></div><div class="bg-sky-50 dark:bg-sky-900/30 p-4 rounded-xl border border-sky-100 dark:border-sky-800/50"><p class="text-xs font-bold text-sky-600 dark:text-sky-400 mb-1 uppercase tracking-wider">Gaya Liburan Dominan</p><p id="insightStyle" class="text-xl font-black text-sky-900 dark:text-sky-300">-</p></div><div class="bg-emerald-50 dark:bg-emerald-900/30 p-4 rounded-xl border border-emerald-100 dark:border-emerald-800/50 relative overflow-hidden"><p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-1 uppercase tracking-wider">Kesiapan Packing</p><p id="insightPacking" class="text-xl font-black text-emerald-900 dark:text-emerald-300">0%</p></div></div></div>
+          <div class="md:col-span-2 bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col"><h3 class="text-sm font-black text-slate-700 dark:text-slate-200 uppercase tracking-widest mb-5 flex items-center gap-2"><span class="text-xl">🕒</span> Trip Terakhir Ditambahkan</h3><div id="dashRecentTrips" class="space-y-3 flex-1 overflow-y-auto pr-2"></div><button onclick="document.getElementById('navMyTrips').click()" class="mt-5 w-full bg-slate-50 dark:bg-slate-700/50 hover:bg-indigo-50 dark:hover:bg-slate-700 text-indigo-600 dark:text-indigo-400 font-bold py-3 rounded-xl transition border border-slate-100 dark:border-slate-600 text-sm">Lihat Semua Riwayat di My Trips ➔</button></div>
+        </div>
+      </div>
+
+      <!-- PLAN TRIP -->
+      <div id="viewPlanTrip" class="hidden relative min-h-screen">
+        <div class="sticky top-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl p-4 md:p-8 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all flex flex-col justify-center">
+          <div class="flex flex-col md:flex-row gap-4 mb-4">
+            <input type="text" id="recName" placeholder="🔍 Cari nama wisata (misal: Monas)..." class="flex-1 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm">
+            <select id="recCity" class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer shadow-sm"><option value="" disabled selected>-- Kota --</option><option value="Jakarta">Jakarta</option><option value="Semarang">Semarang</option><option value="Surabaya">Surabaya</option><option value="Yogyakarta">Yogyakarta</option></select>
+            <select id="recCategory" class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer shadow-sm"><option value="" disabled selected>-- Kategori --</option><option value="Budaya">Budaya</option><option value="Cagar Alam">Cagar Alam</option><option value="Pusat Perbelanjaan">Pusat Perbelanjaan</option><option value="Taman Hiburan">Taman Hiburan</option><option value="Tempat Ibadah">Tempat Ibadah</option></select>
+            <select id="recRating" class="hidden md:block rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 font-semibold text-slate-700 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500 cursor-pointer shadow-sm"><option value="0" selected>Semua Rating</option><option value="4.0">⭐ 4.0+</option><option value="4.5">⭐ 4.5+ (Top)</option></select>
+            <button id="btnRecommend" class="bg-indigo-600 text-white font-black rounded-xl px-6 py-3 hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30">Cari</button>
+          </div>
+          <div class="flex gap-3 overflow-x-auto pb-1 items-center">
+            <span class="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-widest mr-2">Pintasan:</span>
+            <button onclick="window.quickSearch('Jakarta', 'Pusat Perbelanjaan', 0, 4.5)" class="px-4 py-1.5 bg-rose-50 dark:bg-rose-900/30 text-rose-700 dark:text-rose-400 border border-rose-100 dark:border-rose-800/50 rounded-full text-xs font-bold hover:bg-rose-100 dark:hover:bg-rose-900/50 transition whitespace-nowrap">🛍️ Top Mall JKT</button>
+            <button onclick="window.quickSearch('Yogyakarta', 'Budaya', 50000, 4.0)" class="px-4 py-1.5 bg-amber-50 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 border border-amber-100 dark:border-amber-800/50 rounded-full text-xs font-bold hover:bg-amber-100 dark:hover:bg-amber-900/50 transition whitespace-nowrap">🏛️ Budaya Jogja</button>
+            <button onclick="window.quickSearch('Surabaya', 'Taman Hiburan', 9999999, 0)" class="px-4 py-1.5 bg-sky-50 dark:bg-sky-900/30 text-sky-700 dark:text-sky-400 border border-sky-100 dark:border-sky-800/50 rounded-full text-xs font-bold hover:bg-sky-100 dark:hover:bg-sky-900/50 transition whitespace-nowrap">🎢 Wahana SBY</button>
+          </div>
+        </div>
+        <div class="p-4 md:p-8"><div class="flex justify-between items-end mb-4 border-b border-slate-200 dark:border-slate-800 pb-2"><h4 id="recTitle" class="text-xl font-black text-slate-800 dark:text-slate-100">🔥 Trending Minggu Ini</h4></div><div id="recContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20"></div></div>
+      </div>
+
+      <!-- NEAR ME -->
+      <div id="viewNearMe" class="hidden min-h-screen relative">
+        <div class="sticky top-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl px-4 md:px-8 py-6 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-all flex justify-between items-center">
+           <div><h3 class="text-2xl font-black text-slate-800 dark:text-slate-100">Destinasi Terdekat 📍</h3><p class="text-slate-500 dark:text-slate-400 font-semibold text-sm mt-1">Izinkan akses lokasi GPS untuk menemukan wisata di sekitar Anda.</p></div>
+        </div>
+        <div class="p-4 md:p-8">
+          <div class="bg-gradient-to-r from-sky-600 to-indigo-600 rounded-3xl p-8 shadow-lg text-white text-center mb-8 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-white opacity-10 rounded-full blur-2xl"></div>
+            <h4 class="text-3xl font-black mb-2 relative z-10">Cari Wisata di Sekitar Saya</h4><p class="text-sky-100 font-semibold mb-6 relative z-10">Menggunakan Satelit GPS/Wi-Fi untuk akurasi tinggi.</p>
+            <button id="btnFindNearMe" class="relative z-10 bg-white text-indigo-700 font-black px-8 py-4 rounded-full hover:bg-slate-50 hover:scale-105 transition transform shadow-xl text-lg flex items-center gap-3 mx-auto"><svg class="w-6 h-6 text-indigo-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Deteksi Lokasi Saya</button>
+          </div>
+          <div id="nearMeStatus" class="text-center mb-6"></div><div id="nearMeContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20"></div>
+        </div>
+      </div>
+
+      <!-- MY TRIPS -->
+      <div id="viewMyTrips" class="hidden p-4 md:p-8">
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 min-h-[70vh]">
+          <div class="flex justify-between items-center mb-8 border-b border-slate-100 dark:border-slate-700 pb-4">
+            <button onclick="window.printReport()" class="no-print bg-slate-50 dark:bg-slate-700 text-indigo-600 dark:text-indigo-400 font-black px-6 py-3 rounded-xl hover:bg-indigo-50 dark:hover:bg-slate-600 transition shadow-sm border border-slate-200 dark:border-slate-600 flex items-center gap-2">🖨️ Cetak Laporan & Invoice VIP</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left text-sm text-slate-600 dark:text-slate-300"><thead class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 font-black uppercase tracking-wider text-xs border-y border-slate-200 dark:border-slate-700"><tr><th class="p-5">Destinasi</th><th class="p-5">Gaya & Waktu</th><th class="p-5">Status Packing</th><th class="p-5">Total AI</th><th class="p-5 text-center no-print">Aksi</th></tr></thead><tbody id="tripHistoryTableBody" class="divide-y divide-slate-100 dark:divide-slate-700 text-base"></tbody></table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SMART PACKING -->
+      <div id="viewPacking" class="hidden min-h-screen relative">
+        <div class="p-4 md:p-8 mt-4">
+          <div class="bg-sky-50 dark:bg-sky-900/20 border border-sky-100 dark:border-sky-800/50 rounded-2xl p-6 text-center shadow-sm" id="emptyPacking"><span class="text-4xl mb-4 block">🧳</span><h4 class="font-black text-sky-800 dark:text-sky-400 text-xl">Belum ada trip untuk dipacking</h4></div>
+          <div id="packingListContainer" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-20"></div>
+        </div>
+      </div>
+      
+      <!-- SETTINGS UPDATE -->
+      <div id="viewSettings" class="hidden p-4 md:p-8">
+        <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 min-h-[70vh]">
+          <h3 class="text-3xl font-black text-slate-800 dark:text-slate-100 mb-8">Preferences ⚙️</h3>
+          <div class="flex items-center gap-6 p-6 bg-gradient-to-r from-slate-900 to-indigo-900 rounded-3xl text-white mb-8 shadow-xl relative overflow-hidden">
+            <img id="profileAvatar" src="https://ui-avatars.com/api/?name=GUEST&background=f8fafc&color=4f46e5&size=128&bold=true" class="w-24 h-24 rounded-full border-4 border-white/20 z-10 bg-white">
+            <div class="z-10">
+              <h4 id="profileName" class="text-3xl font-black tracking-wide">GUEST</h4>
+              <p id="profileRole" class="text-indigo-200 font-bold mb-3 uppercase tracking-widest text-xs mt-1">Belum Login</p>
+              <button id="btnUpgradePro" onclick="window.handleUpgradePro()" class="bg-amber-400 text-amber-900 text-xs font-black px-4 py-2 rounded-xl shadow-lg shadow-amber-400/20 hover:bg-amber-300 transition">⭐ Upgrade to Pro</button>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="border border-slate-200 dark:border-slate-700 p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-sm"><h5 class="font-black text-slate-700 dark:text-slate-200 mb-4">Konversi Mata Uang 💵</h5><select id="setCurrency" class="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-600 font-bold text-slate-700 dark:text-slate-200 dark:bg-slate-700 outline-none"><option value="IDR">🇮🇩 Rupiah (IDR)</option><option value="USD">🇺🇸 Dollar (USD)</option></select></div>
+            <div class="border border-slate-200 dark:border-slate-700 p-6 rounded-2xl bg-white dark:bg-slate-800 shadow-sm"><h5 class="font-black text-slate-700 dark:text-slate-200 mb-4">Tema Aplikasi 🎨</h5><select id="setTheme" disabled class="w-full p-3 rounded-xl border border-slate-200 dark:border-slate-600 font-bold text-slate-400 bg-slate-50 dark:bg-slate-800 outline-none"><option value="Light Mode">☀️ Light Mode</option><option value="Dark Mode">🌙 Dark Mode (Pro)</option></select></div>
+          </div>
+          <div class="mt-8 border border-rose-100 dark:border-rose-900/50 p-6 rounded-2xl bg-rose-50 dark:bg-rose-900/20">
+            <h5 class="font-black text-rose-600 dark:text-rose-500 mb-2 text-lg">Danger Zone ⚠️</h5><p class="text-sm text-rose-500 dark:text-rose-400 font-semibold mb-4">Menghapus seluruh riwayat perjalanan dan packing.</p>
+            <button onclick="window.factoryReset()" class="bg-rose-500 hover:bg-rose-600 text-white font-black py-3 px-6 rounded-xl transition shadow-lg shadow-rose-500/30">🗑️ Factory Reset Data</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  <!-- SEMUA MODALS DIBERI DARK MODE -->
+  <div id="predictionModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl w-full max-w-xl overflow-hidden transform transition-all border border-slate-200 dark:border-slate-700">
+      <div class="bg-gradient-to-r from-slate-900 to-indigo-900 p-6 text-white flex justify-between items-start">
+        <div><h2 class="text-2xl font-black tracking-wide" id="modalTitle">Trip Prediction</h2><p class="text-indigo-200 font-semibold mt-1" id="modalDestName">Destinasi: -</p></div><button onclick="document.getElementById('predictionModal').classList.add('hidden')" class="text-slate-400 hover:text-white font-black text-3xl leading-none">&times;</button>
+      </div>
+      <div class="p-6 overflow-y-auto max-h-[70vh]">
+        <div id="predictForm" class="flex flex-col gap-4 mb-6">
+          <div class="flex gap-4">
+            <div class="flex-1"><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Gaya Liburan</label><select id="Travel_Style" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required><option value="Backpacker">🎒 Backpacker</option><option value="Comfort" selected>👨‍👩‍👧‍👦 Comfort</option><option value="Luxury">💎 Luxury</option></select></div>
+            <div class="flex-1"><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Durasi (Menit)</label><input type="number" id="Time_Minutes" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+          </div>
+          <input type="hidden" id="Rating"><input type="hidden" id="City"><input type="hidden" id="Category"><input type="hidden" id="DestName"><input type="hidden" id="EditTripId" value="">
+          
+          <button type="button" onclick="window.runAIPrediction()" class="w-full bg-indigo-600 text-white font-black px-6 py-3 rounded-xl hover:bg-indigo-700 shadow-lg shadow-indigo-600/30 mt-2 transition transform active:scale-95">Re-Calculate AI ✨</button>
+        </div>
+
+        <div id="resultContainer" class="hidden mt-6 border-t border-slate-100 dark:border-slate-700 pt-6">
+          <div class="bg-indigo-50 dark:bg-indigo-900/30 rounded-2xl p-6 mb-4 border border-indigo-100 dark:border-indigo-800/50"><p class="text-xs font-black text-indigo-600 dark:text-indigo-400 uppercase tracking-widest mb-1 text-center">Estimasi Total Budget</p><h3 id="result" class="text-4xl font-black text-indigo-900 dark:text-indigo-300 text-center drop-shadow-sm">Rp 0</h3><p class="text-[10px] text-slate-400 text-center mt-2 font-bold uppercase">*Berbasis model Machine Learning</p></div>
+          <div class="mb-4"><h4 class="text-sm font-black text-slate-700 dark:text-slate-200 mb-3 flex items-center gap-2"><span class="text-lg">💡</span> Rekomendasi Alokasi Dana</h4>
+          
+          <div class="space-y-3">
+              <div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-600 flex justify-between items-center shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="checkbox" id="chkHotel" checked class="w-5 h-5 text-indigo-600 rounded cursor-pointer" onchange="window.runAIPrediction()">
+                  <div><p class="text-xs font-black text-slate-800 dark:text-slate-200">🛌 Penginapan</p><p id="descHotel" class="text-[10px] text-slate-500 font-bold mt-0.5">-</p></div>
+                </div>
+                <div class="text-right"><p id="bdHotel" class="text-sm font-black text-indigo-600 dark:text-indigo-400">Rp 0</p></div>
+              </div>
+              
+              <div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-600 flex justify-between items-center shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="checkbox" id="chkFood" checked class="w-5 h-5 text-sky-600 rounded cursor-pointer" onchange="window.runAIPrediction()">
+                  <div><p class="text-xs font-black text-slate-800 dark:text-slate-200">🍔 Konsumsi</p><p id="descFood" class="text-[10px] text-slate-500 font-bold mt-0.5">-</p></div>
+                </div>
+                <div class="text-right"><p id="bdFood" class="text-sm font-black text-sky-600 dark:text-sky-400">Rp 0</p></div>
+              </div>
+              
+              <div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-600 flex justify-between items-center shadow-sm">
+                <div class="flex items-center gap-3">
+                  <input type="checkbox" id="chkTransport" checked class="w-5 h-5 text-amber-500 rounded cursor-pointer" onchange="window.runAIPrediction()">
+                  <div><p class="text-xs font-black text-slate-800 dark:text-slate-200">🚗 Transportasi Lokal</p><p id="descTransport" class="text-[10px] text-slate-500 font-bold mt-0.5">-</p></div>
+                </div>
+                <div class="text-right"><p id="bdTransport" class="text-sm font-black text-amber-500 dark:text-amber-400">Rp 0</p></div>
+              </div>
+              
+              <div class="bg-emerald-50 dark:bg-emerald-900/20 p-3 rounded-xl border border-emerald-200 dark:border-emerald-800/50 flex justify-between items-center shadow-sm">
+                <div class="flex items-center gap-3">
+                  <div class="w-5 h-5 flex items-center justify-center"><span class="text-base">🎟️</span></div>
+                  <div><p class="text-xs font-black text-emerald-800 dark:text-emerald-400">Tiket Masuk Destinasi</p><p id="descTicket" class="text-[10px] text-emerald-600 dark:text-emerald-500 font-bold mt-0.5">Harga Tiket Riil AI</p></div>
+                </div>
+                <div class="text-right"><p id="bdTicket" class="text-sm font-black text-emerald-600 dark:text-emerald-400">Rp 0</p></div>
+              </div>
+          </div></div>
+          <div class="bg-amber-50 dark:bg-amber-900/30 border border-amber-200 dark:border-amber-800/50 p-4 rounded-xl mb-6 flex items-start gap-3"><span class="text-2xl">🤖</span><div><p class="text-xs font-black text-amber-800 dark:text-amber-400 uppercase tracking-widest mb-1">AI Smart Tip</p><p id="aiTipText" class="text-amber-700 dark:text-amber-300 text-sm font-semibold leading-relaxed">...</p></div></div>
+          <button id="saveTripBtn" class="w-full bg-emerald-500 text-white font-black py-4 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-500/30">💾 Simpan Rencana Ini</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tncModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl w-full max-w-lg overflow-hidden transform transition-all border border-slate-200 dark:border-slate-700">
+      <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center"><h2 class="text-xl font-black text-slate-800 dark:text-slate-100">Syarat & Ketentuan</h2><button onclick="window.closeTnc()" class="text-slate-400 hover:text-rose-500 font-black text-2xl leading-none">&times;</button></div>
+      <div class="p-6 text-slate-600 dark:text-slate-300 text-sm space-y-4 max-h-[60vh] overflow-y-auto"><p>1. <strong>Prediksi AI:</strong> Seluruh harga hanyalah estimasi, bukan harga mutlak real-time.</p><p>2. <strong>Privasi Data:</strong> Data disimpan di database lokal (*SQLite*).</p></div>
+      <div class="p-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700"><button onclick="window.closeTnc()" class="w-full bg-indigo-600 text-white font-bold py-3 rounded-xl hover:bg-indigo-700 transition shadow-sm">Saya Mengerti</button></div>
+    </div>
+  </div>
+
+  <div id="authModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-[60] hidden flex items-center justify-center p-4">
+    <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all relative border border-slate-200 dark:border-slate-700">
+      <div class="p-8">
+        <button onclick="window.closeAuth()" class="absolute top-6 right-6 text-slate-400 hover:text-rose-500 font-black text-2xl leading-none">&times;</button>
+        
+        <div id="formLogin" class="block">
+          <h2 class="text-2xl font-black text-slate-800 dark:text-slate-100">Selamat Datang! 👋</h2><p class="text-sm text-slate-500 dark:text-slate-400 font-bold mt-1 mb-6">Masuk untuk menyimpan ke database.</p>
+          <form id="loginAction" class="space-y-4">
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Email</label><input id="loginEmail" type="email" placeholder="nama@email.com" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Password</label><input type="password" placeholder="********" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <div class="flex justify-end"><button type="button" onclick="window.switchAuth('forgot')" class="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline">Lupa Password?</button></div>
+            <button type="submit" class="w-full bg-indigo-600 text-white font-black py-4 rounded-xl hover:bg-indigo-700 transition shadow-lg shadow-indigo-600/30 mt-2">Masuk</button>
+          </form>
+          <p class="text-center text-xs text-slate-400 font-bold mt-6">Belum punya akun? <button onclick="window.switchAuth('register')" class="text-indigo-600 dark:text-indigo-400 hover:underline">Daftar sekarang</button></p>
+        </div>
+
+        <!-- Bagian Form Lupa Password & Ganti Sandi (Diperlakukan sama dengan Dark Mode) -->
+        <div id="formRegister" class="hidden">
+          <h2 class="text-2xl font-black text-slate-800 dark:text-slate-100">Buat Akun Baru 🚀</h2><p class="text-sm text-slate-500 dark:text-slate-400 font-bold mt-1 mb-6">Bergabung untuk menyimpan data trip.</p>
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Pendaftaran berhasil! Silakan login.'); window.switchAuth('login');">
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Nama Lengkap</label><input type="text" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Email</label><input type="email" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Password Baru</label><input type="password" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <button type="submit" class="w-full bg-sky-600 text-white font-black py-4 rounded-xl hover:bg-sky-700 transition shadow-lg shadow-sky-600/30 mt-2">Daftar</button>
+          </form>
+          <p class="text-center text-xs text-slate-400 font-bold mt-6">Sudah punya akun? <button onclick="window.switchAuth('login')" class="text-indigo-600 dark:text-indigo-400 hover:underline">Masuk</button></p>
+        </div>
+
+        <div id="formForgot" class="hidden">
+          <h2 class="text-2xl font-black text-slate-800 dark:text-slate-100">Lupa Password? 🔐</h2><p class="text-sm text-slate-500 dark:text-slate-400 font-bold mt-1 mb-6">Masukkan email Anda untuk reset.</p>
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Link reset password telah dikirim ke email Anda.'); window.switchAuth('change');">
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Email Terdaftar</label><input type="email" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <button type="submit" class="w-full bg-amber-500 text-white font-black py-4 rounded-xl hover:bg-amber-600 transition shadow-lg shadow-amber-500/30 mt-2">Kirim Link Reset</button>
+          </form>
+          <p class="text-center text-xs text-slate-400 font-bold mt-6"><button onclick="window.switchAuth('login')" class="text-indigo-600 dark:text-indigo-400 hover:underline">⬅️ Kembali ke Login</button></p>
+        </div>
+
+        <div id="formChangePass" class="hidden">
+          <h2 class="text-2xl font-black text-slate-800 dark:text-slate-100">Ganti Sandi Baru 🔑</h2><p class="text-sm text-slate-500 dark:text-slate-400 font-bold mt-1 mb-6">Masukkan sandi baru Anda.</p>
+          <form class="space-y-4" onsubmit="event.preventDefault(); alert('Sandi berhasil diubah!'); window.switchAuth('login');">
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Sandi Baru</label><input type="password" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <div><label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase mb-1">Ulangi Sandi Baru</label><input type="password" class="w-full rounded-xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 p-3 font-bold text-slate-800 dark:text-slate-200 outline-none focus:ring-2 focus:ring-indigo-500" required></div>
+            <button type="submit" class="w-full bg-emerald-500 text-white font-black py-4 rounded-xl hover:bg-emerald-600 transition shadow-lg shadow-emerald-500/30 mt-2">Simpan Sandi</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
