@@ -28,7 +28,7 @@ Buka terminal/command prompt baru, lalu jalankan perintah berikut:
 # Masuk ke direktori backend
 cd backend
 
-# (Opsional tapi disarankan) Buat dan aktifkan virtual environment
+# (Opsional) Buat dan aktifkan virtual environment
 python -m venv venv
 # Untuk Windows: venv\Scripts\activate
 # Untuk Mac/Linux: source venv/bin/activate
@@ -39,6 +39,7 @@ pip install -r requirements.txt
 # Jalankan server FastAPI
 uvicorn main:app --reload
 
+```bash
 # Masuk ke direktori frontend
 cd frontend
 
