@@ -10,6 +10,10 @@ import pickle
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Selamat datang di API Smart Budget Travel! Server aktif dan siap digunakan."}
+
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 # --- LOAD MODEL DAN SCALER ---
