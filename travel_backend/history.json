@@ -1,0 +1,506 @@
+[
+    {
+        "input": {
+            "Rating": 4.4,
+            "Time_Minutes": 120.0,
+            "Lat": -7.26543,
+            "Long": 112.750305,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": true,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7696.6240234375
+    },
+    {
+        "input": {
+            "Rating": 4.0,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7467.796875
+    },
+    {
+        "input": {
+            "Rating": 4.0,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7467.796875
+    },
+    {
+        "input": {
+            "Rating": 4.0,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7467.796875
+    },
+    {
+        "input": {
+            "Rating": 11.0,
+            "Time_Minutes": 60.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 5854.18994140625
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 150.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": true,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 8383.9541015625
+    },
+    {
+        "input": {
+            "Rating": 4.4,
+            "Time_Minutes": 160.0,
+            "Lat": -7.2504,
+            "Long": 112.7688,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": true,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": true,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 8904.1728515625
+    },
+    {
+        "input": {
+            "Rating": 4.4,
+            "Time_Minutes": 2000.0,
+            "Lat": -7.2504,
+            "Long": 112.7688,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": true,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": true,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 64136.90234375
+    },
+    {
+        "input": {
+            "Rating": 4.7,
+            "Time_Minutes": 150.0,
+            "Lat": -7.2504,
+            "Long": 112.7688,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": true,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": true,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 8604.8515625
+    },
+    {
+        "input": {
+            "Rating": 4.8,
+            "Time_Minutes": 120.0,
+            "Lat": -7.7956,
+            "Long": 110.3695,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": true,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": true
+        },
+        "prediction_result": 7605.32177734375
+    },
+    {
+        "input": {
+            "Rating": 4.7,
+            "Time_Minutes": 120.0,
+            "Lat": -6.9666,
+            "Long": 110.4166,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": true,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7622.0791015625
+    },
+    {
+        "input": {
+            "Rating": 4.5,
+            "Time_Minutes": 10000.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 304010.15625
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 10000.0,
+            "Lat": -6.9666,
+            "Long": 110.4166,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": true,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 304148.71875
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 10000.0,
+            "Lat": -6.9666,
+            "Long": 110.4166,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": true,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 304148.71875
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 1000000.0,
+            "Lat": -6.9666,
+            "Long": 110.4166,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": true,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 30016236.0
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7461.037109375
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7461.037109375
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7461.037109375
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7461.037109375
+    },
+    {
+        "input": {
+            "Rating": 4.6,
+            "Time_Minutes": 120.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 7461.037109375
+    },
+    {
+        "input": {
+            "Rating": 4.2,
+            "Time_Minutes": 1200.0,
+            "Lat": -7.7956,
+            "Long": 110.3695,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": true
+        },
+        "prediction_result": 40041.40625
+    },
+    {
+        "input": {
+            "Rating": 4.2,
+            "Time_Minutes": 1200.0,
+            "Lat": -7.7956,
+            "Long": 110.3695,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": true
+        },
+        "prediction_result": 40041.40625
+    },
+    {
+        "input": {
+            "Rating": 4.2,
+            "Time_Minutes": 1200.0,
+            "Lat": -7.7956,
+            "Long": 110.3695,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": true
+        },
+        "prediction_result": 40041.40625
+    },
+    {
+        "input": {
+            "Rating": 4.2,
+            "Time_Minutes": 1200.0,
+            "Lat": -7.7956,
+            "Long": 110.3695,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": true
+        },
+        "prediction_result": 40041.40625
+    },
+    {
+        "input": {
+            "Rating": 4.2,
+            "Time_Minutes": 1200.0,
+            "Lat": -7.7956,
+            "Long": 110.3695,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": true
+        },
+        "prediction_result": 40041.40625
+    },
+    {
+        "input": {
+            "Rating": 4.2,
+            "Time_Minutes": 1200.0,
+            "Lat": -7.7956,
+            "Long": 110.3695,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": true
+        },
+        "prediction_result": 40041.40625
+    },
+    {
+        "input": {
+            "Rating": 4.5,
+            "Time_Minutes": 12000.0,
+            "Lat": -6.9666,
+            "Long": 110.4166,
+            "Category_Budaya": false,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": false,
+            "City_Semarang": true,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 364147.5625
+    },
+    {
+        "input": {
+            "Rating": 4.5,
+            "Time_Minutes": 12000.0,
+            "Lat": -6.2088,
+            "Long": 106.8456,
+            "Category_Budaya": true,
+            "Category_Cagar_Alam": false,
+            "Category_Pusat_Perbelanjaan": false,
+            "Category_Taman_Hiburan": false,
+            "Category_Tempat_Ibadah": false,
+            "City_Jakarta": true,
+            "City_Semarang": false,
+            "City_Surabaya": false,
+            "City_Yogyakarta": false
+        },
+        "prediction_result": 364034.5625
+    }
+]
